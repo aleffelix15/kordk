@@ -1,0 +1,54 @@
+/* Placeholder de texto caso a imagem falhe (usando a fonte principal e o gradiente) */
+.logo-text-placeholder {
+    font-family: var(--fd); /* Bricolage Grotesque */
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #fff;
+    background: var(--gt); /* Texto com gradiente */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(232,25,60,.7));
+    margin-right: 10px;
+}.logo-3d-wrap {
+     display: inline-block;
+     margin-bottom: 2rem;
+     perspective: 1000px; /* Dá profundidade */
+ }
+
+.logo-3d {
+    max-width: 180px;
+    height: auto;
+    /* Brilho inicial (Rosa e Roxo) */
+    filter: drop-shadow(0 0 15px rgba(232, 25, 60, 0.5))
+    drop-shadow(0 0 30px rgba(124, 58, 237, 0.3));
+    animation: logoPulse 4s ease-in-out infinite alternate;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.logo-3d:hover {
+    transform: scale(1.05) rotateY(10deg);
+}
+
+/* Fallback caso a imagem não carregue */
+.logo-fallback {
+    font-family: var(--fd);
+    font-weight: 800;
+    font-size: 3.5rem;
+    background: var(--gt);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px var(--rg));
+}
+
+@keyframes logoPulse {
+    from {
+        filter: drop-shadow(0 0 15px rgba(232, 25, 60, 0.4))
+        drop-shadow(0 0 30px rgba(124, 58, 237, 0.2));
+        transform: translateY(0);
+    }
+    to {
+        filter: drop-shadow(0 0 30px rgba(232, 25, 60, 0.7))
+        drop-shadow(0 0 60px rgba(124, 58, 237, 0.5));
+        transform: translateY(-10px);
+    }
+}
