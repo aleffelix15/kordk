@@ -364,9 +364,16 @@
 
     <div class="hi">
         <!-- Novo Logo 3D -->
-        <div class="logo-3d-wrap">
-            <img src="logo-kordx-3d.png" alt="KordX Premium Web Development" class="logo-3d" width="180" height="180"/>
-        </div>
+        <<div class="logo-3d-wrap">
+        <img src="logo-kordx-3d.png"
+             alt="KordX Premium Web Development"
+             class="logo-3d"
+             width="180"
+             height="180"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+        <div class="logo-fallback" style="display:none;">KORDX</div>
+    </div>
 
         <div class="hchip">
             <div class="hp"></div>
